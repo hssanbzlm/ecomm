@@ -1,0 +1,22 @@
+.container{
+    width: 100%; 
+    display:flex;
+    justify-content:center;
+    background-color:#4d4d4d;
+    color: cornsilk;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 10%;
+}
+
+.container div{
+    width: 5%;
+    margin: 1%;
+    font-size: 30px;
+    cursor: pointer;
+    
+} 
+
+.container div:hover{
+
+      color: crimson;
+}
