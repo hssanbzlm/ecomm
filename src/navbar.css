@@ -20,3 +20,13 @@
 
       color: crimson;
 }
+
+.shopping-card{ 
+    color:white;
+    position:fixed;
+    right: 1%;
+    top:3%;
+    width: 5%;
+    height: 5%;
+
+}
