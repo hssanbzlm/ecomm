@@ -4,22 +4,20 @@ import Basket from "./Basket";
 import { Link } from "react-router-dom";
 function NavBar() {
   return (
-    <>
-      <div className="container">
-        <div className="logo">Tech</div>
-        <div className="link-container">
-          <Link to="/">
-            <div>Pc</div>
-          </Link>
-          <Link to="/phone">
-            <div> Smartphone</div>
-          </Link>
-        </div>
-        <div className="shopping-card">
-          <Basket />
-        </div>
+    <div className="container">
+      <div className="logo">Tech</div>
+      <div className="link-container">
+        <Link to="/">
+          <div>Pc</div>
+        </Link>
+        <Link to="/phone">
+          <div> Smartphone</div>
+        </Link>
       </div>
-    </>
+      <div className="shopping-card">
+        <Basket />
+      </div>
+    </div>
   );
 }
 
