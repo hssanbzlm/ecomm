@@ -1,4 +1,7 @@
 .main-container{
     background-color: crimson;
     height: 83%;
+    display: flex;
+    justify-content: center; 
+    align-items: flex-end;
 }

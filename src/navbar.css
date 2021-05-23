@@ -1,32 +1,49 @@
 .container{
     width: 100%; 
     display:flex;
-    justify-content:center;
+    justify-content:space-between;
     background-color:#4d4d4d;
     color: cornsilk;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     height: 10%;
 }
 
-.container div{
-    width: 5%;
-    margin: 1%;
-    font-size: 30px;
-    cursor: pointer;
-    
-} 
+.link-container{ 
+    width: 60%;
+    height: 100%;
+    display: flex;
+    background-color: tomato;
+    align-items: center;
+    justify-content: center;
 
-.container div:hover{
-
-      color: crimson;
 }
 
 .shopping-card{ 
-    color:white;
-    position:fixed;
-    right: 1%;
-    top:3%;
-    width: 5%;
-    height: 5%;
+    width: 15%;
+    height: 100%;
+    background-color: teal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
 
+
+.logo
+{
+    width: 15%;
+    height: 100%;
+    background-color: turquoise;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+a{
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        margin: 1%;
+        
 }
