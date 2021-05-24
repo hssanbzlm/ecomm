@@ -5,6 +5,8 @@ import Footer from "./Footer";
 import NavBar from "./NavBar";
 import Container from "./Container";
 import { BrowserRouter as Router } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 function App() {
   return (
     <Router>

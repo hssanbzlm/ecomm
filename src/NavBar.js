@@ -7,10 +7,10 @@ function NavBar() {
     <div className="container">
       <div className="logo">Tech</div>
       <div className="link-container">
-        <Link to="/">
+        <Link to={`/${"pc"}`}>
           <div>Pc</div>
         </Link>
-        <Link to="/phone">
+        <Link to={`/${"phone"}`}>
           <div> Smartphone</div>
         </Link>
       </div>

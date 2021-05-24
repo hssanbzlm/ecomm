@@ -1,0 +1,66 @@
+{
+    "pc": [
+        {
+            "id": "1",
+            "title": "pc1",
+            "description": "seconddezerezd",
+            "price": 450
+        },
+        {
+            "id": "2",
+            "title": "pc2",
+            "description": "firsttt",
+            "price": 1200
+        },
+        {
+            "id": "3",
+            "title": "pc3",
+            "description": "efhg",
+            "price": 890
+        }
+    ],
+    "phone": [
+        {
+            "id": "1",
+            "title": "from phone",
+            "description": "seconddezerezd",
+            "price": 350
+        },
+        {
+            "id": "2",
+            "title": "firsttt",
+            "description": "firsttt",
+            "price": 2000
+        },
+        {
+            "id": "3",
+            "title": "abcdeeee",
+            "description": "efhg",
+            "price": 790
+        },
+        {
+            "id": "4",
+            "title": "fourth",
+            "description": "fourth",
+            "price": 350
+        },
+        {
+            "id": "5",
+            "title": "fifth",
+            "description": "fifth",
+            "price": 2000
+        },
+        {
+            "id": "6",
+            "title": "sixth",
+            "description": "sixth",
+            "price": 790
+        },
+        {
+            "id": "7",
+            "title": "seventh",
+            "description": "seventh",
+            "price": 790
+        }
+    ]
+}
