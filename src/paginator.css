@@ -1,9 +1,16 @@
 .paginator-container{
-    width: 85%;
+    width: 80%;
     height: 98%;
     background-color: chocolate;
     display: flex; 
-    justify-content: space-around;
-    flex-wrap: wrap;
-    
+    align-items:center; 
+    flex-direction: column;   
+}
+.items-data{
+
+    display: flex;
+    justify-content: space-between;
+    width: 98%;
+    height: 90%;
+    background-color: salmon;
 }

@@ -24,7 +24,7 @@ function Item({ match }) {
 
   return (
     <div className="item-container">
-      <Paginator data={items} pageSize={5} />
+      <Paginator data={items} pageSize={2} />
     </div>
   );
 }

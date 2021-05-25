@@ -17,6 +17,12 @@
             "title": "pc3",
             "description": "efhg",
             "price": 890
+        },
+        {
+            "id": "4",
+            "title": "pc4",
+            "description": "c'est le pc num4",
+            "price": 1500
         }
     ],
     "phone": [

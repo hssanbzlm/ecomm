@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import ItemCard from "./ItemCard";
+import Pagination from "./Pagination";
 import "./paginator.css";
 
 function Paginator({ data, pageSize }) {
   const [currentPage, setCurrentPage] = useState(1);
-  const [currentData, setCurrentData] = useState(data);
-  const NumberOfPagination = Math.round(data.length / pageSize);
+  const NumberOfPagination = Math.ceil(data.length / pageSize);
   useEffect(() => {
     console.log("rerender");
   }, [currentPage]);
@@ -15,20 +15,24 @@ function Paginator({ data, pageSize }) {
     console.log("rerender");
   }, [data]);
 
+  function getCurrentPage(page) {
+    setCurrentPage(page);
+  }
+
   return (
     <div className="paginator-container">
-      {data
-        .slice((currentPage - 1) * pageSize, pageSize * currentPage)
-        .map((v) => (
-          <ItemCard item={v} key={v.id} />
-        ))}
-
-      <button
-        style={{ width: "10%", height: "10%" }}
-        onClick={() => setCurrentPage(2)}
-      >
-        Click
-      </button>
+      <div className="items-data">
+        {data
+          .slice((currentPage - 1) * pageSize, pageSize * currentPage)
+          .map((v) => (
+            <ItemCard item={v} key={v.id} />
+          ))}
+      </div>
+      <Pagination
+        numberOfPagination={NumberOfPagination}
+        getPageNumber={getCurrentPage}
+        activePage={currentPage}
+      />
     </div>
   );
 }

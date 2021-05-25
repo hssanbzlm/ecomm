@@ -1,15 +1,17 @@
 import React from "react";
-import { Card, Button } from "react-bootstrap";
-
 function ItemCard({ item }) {
   return (
-    <Card style={{ width: "30%", height: "30%" }}>
-      <Card.Body>
-        <Card.Title>{item.title}</Card.Title>
-        <Card.Text>{item.description}</Card.Text>
-        <Button variant="primary">Details</Button>
-      </Card.Body>
-    </Card>
+    <div className="card" style={{ width: "17%", height: "90%" }}>
+      <img
+        alt="img"
+        className="card-img-top"
+        src="https://via.placeholder.com/150"
+      />
+      <div className="card-body">
+        <h5 className="card-title">{item.title}</h5>
+        <p className="card-text">{item.description}</p>
+      </div>
+    </div>
   );
 }
 
