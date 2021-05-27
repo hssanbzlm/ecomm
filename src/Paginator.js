@@ -3,17 +3,16 @@ import ItemCard from "./ItemCard";
 import Pagination from "./Pagination";
 import "./paginator.css";
 
-function Paginator({ data, pageSize }) {
+function Paginator({ data, pageSize, priceFilter }) {
   const [currentPage, setCurrentPage] = useState(1);
-  const NumberOfPagination = Math.ceil(data.length / pageSize);
-  useEffect(() => {
-    console.log("rerender");
-  }, [currentPage]);
+  const NumberOfPagination = Math.ceil(
+    data.filter((v) => v.price >= priceFilter[0] && v.price <= priceFilter[1])
+      .length / pageSize
+  );
 
   useEffect(() => {
     setCurrentPage(1);
-    console.log("rerender");
-  }, [data]);
+  }, [data, priceFilter]);
 
   function getCurrentPage(page) {
     setCurrentPage(page);
@@ -23,6 +22,7 @@ function Paginator({ data, pageSize }) {
     <div className="paginator-container">
       <div className="items-data">
         {data
+          .filter((v) => v.price >= priceFilter[0] && v.price <= priceFilter[1])
           .slice((currentPage - 1) * pageSize, pageSize * currentPage)
           .map((v) => (
             <ItemCard item={v} key={v.id} />

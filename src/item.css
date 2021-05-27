@@ -3,5 +3,5 @@
   width: 98%;
   height: 95%;
   background-color: yellow;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
