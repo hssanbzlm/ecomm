@@ -4,69 +4,129 @@
             "id": "1",
             "title": "pc1",
             "description": "seconddezerezd",
-            "price": 450
+            "price": 450,
+            "marque": "HP"
         },
         {
             "id": "2",
             "title": "pc2",
             "description": "firsttt",
-            "price": 1200
+            "price": 1200,
+            "marque": "DELL"
         },
         {
             "id": "3",
             "title": "pc3",
             "description": "efhg",
-            "price": 890
+            "price": 890,
+            "marque": "ASUS"
         },
         {
             "id": "4",
             "title": "pc4",
             "description": "c'est le pc num4",
-            "price": 1500
+            "price": 1500,
+            "marque": "TOSHIBA"
+        },
+        {
+            "id": "5",
+            "title": "pc5",
+            "description": "c'est le pc num5",
+            "price": 550,
+            "marque": "TOSHIBA"
+        },
+        {
+            "id": "6",
+            "title": "pc6",
+            "description": "c'est le pc num6",
+            "price": 900,
+            "marque": "DELL"
+        },
+        {
+            "id": "7",
+            "title": "pc7",
+            "description": "c'est le pc num7",
+            "price": 750,
+            "marque": "ASUS"
+        },
+        {
+            "id": "8",
+            "title": "pc8",
+            "description": "c'est le pc num8",
+            "price": 1050,
+            "marque": "HP"
+        },
+        {
+            "id": "9",
+            "title": "pc9",
+            "description": "c'est le pc num9",
+            "price": 7500,
+            "marque": "DELL"
         }
     ],
     "phone": [
         {
             "id": "1",
             "title": "from phone",
-            "description": "seconddezerezd",
-            "price": 350
+            "description": "phone 1",
+            "price": 350,
+            "marque": "SAMSUNG"
         },
         {
             "id": "2",
             "title": "firsttt",
-            "description": "firsttt",
-            "price": 2000
+            "description": "PHONE2",
+            "price": 2000,
+            "marque": "APPLE"
         },
         {
             "id": "3",
-            "title": "abcdeeee",
+            "title": "phone3",
             "description": "efhg",
-            "price": 790
+            "price": 790,
+            "marque": "SAMSUNG"
         },
         {
             "id": "4",
-            "title": "fourth",
+            "title": "phone4",
             "description": "fourth",
-            "price": 350
+            "price": 350,
+            "marque": "HUAWEI"
         },
         {
             "id": "5",
             "title": "fifth",
             "description": "fifth",
-            "price": 2500
+            "price": 2500,
+            "marque": "HUAWEI"
         },
         {
             "id": "6",
             "title": "sixth",
             "description": "sixth",
-            "price": 790
+            "price": 790,
+            "marque": "APPLE"
         },
         {
             "id": "7",
             "title": "seventh",
             "description": "seventh",
-            "price": 790
+            "price": 790,
+            "marque": "SAMSUNG"
+        },
+        {
+            "id": "8",
+            "title": "8",
+            "description": "8",
+            "price": 490,
+            "marque": "SAMSUNG"
+        },
+        {
+            "id": "9",
+            "title": "nine",
+            "description": "nine",
+            "price": 300,
+            "marque": "Evertek"
         }
     ]
 }
