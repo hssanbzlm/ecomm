@@ -10,6 +10,7 @@ function ItemCard({ item }) {
       <div className="card-body">
         <h5 className="card-title">{item.title}</h5>
         <p className="card-text">{item.description}</p>
+        <p className="card-text">{item.marque}</p>
       </div>
     </div>
   );

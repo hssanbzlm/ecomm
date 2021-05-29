@@ -8,11 +8,30 @@ const FilterItems = React.memo(function FilterItems({
   initMinMaxPrice,
   value,
   marques,
+  handleMarquesFilter,
 }) {
-  function handleChange(e, newValue) {
+  const [checked, setChecked] = useState(() => {
+    const initChecks = {};
+    for (const [key, value] of Object.entries(marques)) {
+      initChecks[key] = true;
+    }
+    return initChecks;
+  });
+  function handlePriceChange(e, newValue) {
     handlePriceFilter(newValue);
   }
-  console.log(marques);
+  function handleMarquesChange(e) {
+    const checks = Object.assign({}, checked);
+    if (e.target.checked) {
+      checks[e.target.value] = true;
+      handleMarquesFilter({ checked: true, value: e.target.value });
+    } else {
+      checks[e.target.value] = false;
+      handleMarquesFilter({ checked: false, value: e.target.value });
+    }
+    setChecked(checks);
+  }
+
   return (
     <div className="filter-container">
       <Typography id="range-slider">Price</Typography>
@@ -21,18 +40,33 @@ const FilterItems = React.memo(function FilterItems({
         min={initMinMaxPrice[0]}
         max={initMinMaxPrice[1]}
         step={50}
-        onChange={handleChange}
+        onChange={handlePriceChange}
         valueLabelDisplay="on"
         aria-labelledby="range-slider"
         style={{ width: "80%", color: "gray" }}
         marks={true}
       />
       <Typography id="range-slider">Marques</Typography>
-      {Object.keys(marques).map((key) => (
-        <div key={key}>
-          {key} {marques[key]}{" "}
-        </div>
-      ))}
+      <form
+        style={{
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        {Object.keys(marques).map((marque, i) => (
+          <label key={i}>
+            {" "}
+            {`${marque} (${marques[marque]})`}
+            <input
+              value={marque}
+              type="checkbox"
+              key={i}
+              onChange={handleMarquesChange}
+              checked={checked[marque]}
+            />
+          </label>
+        ))}
+      </form>
     </div>
   );
 });

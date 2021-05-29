@@ -4,6 +4,11 @@ import axios from "axios";
 import Paginator from "./Paginator";
 import FilterItems from "./FilterItems";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import findMaxPrice, {
+  findMinPrice,
+  initializeFilterMarque,
+  countMarques,
+} from "./services";
 
 function Item({ match }) {
   const [items, setItems] = useState(null);
@@ -11,7 +16,7 @@ function Item({ match }) {
   const [loadFilter, setLoadFilter] = useState();
   const [minMaxPrice, setMinMaxPrice] = useState([]);
   const [marques, setMarques] = useState({});
-
+  const [marquesFilter, setMarquesFilter] = useState({});
   const memoizedGetData = useCallback(() => {
     axios
       .get(`http://localhost:3000/${match.params.item}`)
@@ -28,40 +33,19 @@ function Item({ match }) {
     memoizedGetData();
   }, [memoizedGetData]);
 
-  const memoizedFindMinMax = useCallback(() => {
-    var max = items.reduce((a, b) => {
-      if (Math.max(a.price, b.price) === a.price) return a;
-      else return b;
-    });
-
-    var min = items.reduce((a, b) => {
-      if (Math.min(a.price, b.price) === a.price) return a;
-      else return b;
-    });
-    setMinMaxPrice([min.price, max.price]);
-    setPriceFilter([min.price, max.price]);
-  }, [items]);
-
-  const memoizedFindMarques = useCallback(() => {
-    var marques = [];
-
-    for (let i = 0; i < items.length; i++) {
-      if (marques[items[i].marque]) {
-        marques[items[i].marque]++;
-      } else {
-        marques[items[i].marque] = 1;
-      }
-    }
-
-    setMarques(marques);
-  }, [items]);
   useEffect(() => {
     if (items) {
-      memoizedFindMinMax();
-      memoizedFindMarques();
+      var minPrice = findMinPrice(items);
+      var maxPrice = findMaxPrice(items);
+      var listOfMarques = countMarques(items);
+      var filterMarques = initializeFilterMarque(items);
+      setMinMaxPrice([minPrice.price, maxPrice.price]);
+      setPriceFilter([minPrice.price, maxPrice.price]);
+      setMarques(listOfMarques);
+      setMarquesFilter(filterMarques);
       setLoadFilter(true);
     }
-  }, [memoizedFindMarques, memoizedFindMinMax, items]);
+  }, [items]);
 
   const memoizedHandlePriceFilter = useCallback(
     (v) => {
@@ -69,7 +53,11 @@ function Item({ match }) {
     },
     [setPriceFilter]
   );
-
+  function handleMarquesFilter(marques) {
+    const data = Object.assign({}, marquesFilter);
+    data[marques.value] = marques.checked;
+    setMarquesFilter(data);
+  }
   return (
     <div className="item-container">
       {loadFilter ? (
@@ -79,8 +67,14 @@ function Item({ match }) {
             initMinMaxPrice={minMaxPrice}
             value={priceFilter}
             marques={marques}
+            handleMarquesFilter={handleMarquesFilter}
           />
-          <Paginator data={items} pageSize={4} priceFilter={priceFilter} />
+          <Paginator
+            data={items}
+            pageSize={4}
+            priceFilter={priceFilter}
+            marquesFilter={marquesFilter}
+          />
         </>
       ) : (
         <CircularProgress size={50} />
