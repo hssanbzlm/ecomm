@@ -1,9 +1,17 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
-
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import Badge from "@material-ui/core/Badge";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import { BasketContext } from "./Context";
 function Basket() {
-  return <FontAwesomeIcon icon={faShoppingBasket} size="2x" />;
+  const [basket, setContext] = useContext(BasketContext);
+  return (
+    <Link to={"/detailsbasket"}>
+      <Badge badgeContent={basket.length} color="primary">
+        <ShoppingCartIcon />
+      </Badge>
+    </Link>
+  );
 }
 
 export default Basket;
