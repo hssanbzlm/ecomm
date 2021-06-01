@@ -1,0 +1,8 @@
+.commande-container {
+    display: flex;
+    width: 98%;
+    height: 95%;
+    background-color:purple;
+    justify-content: center;
+  }
+  
