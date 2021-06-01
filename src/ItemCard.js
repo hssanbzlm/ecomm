@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React, { memo, useCallback, useContext, useMemo } from "react";
 import { BasketContext } from "./Context";
 
 function ItemCard({ item }) {
   const [basket, setBasket] = useContext(BasketContext);
-  console.log(basket);
+
   function addItem() {
     const index = basket.findIndex((v) => v.id === item.id);
     if (index >= 0) {
@@ -11,7 +11,7 @@ function ItemCard({ item }) {
       data[index].qte++;
       setBasket(data);
     } else {
-      const newItem = item;
+      const newItem = Object.assign({}, item);
       newItem.qte = 1;
       setBasket(basket.concat([newItem]));
     }

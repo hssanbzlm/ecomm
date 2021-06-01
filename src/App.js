@@ -9,10 +9,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BasketContext } from "./Context";
 function App() {
   const [context, setContext] = useState([]);
-
+  const value = [context, setContext];
   return (
     <Router>
-      <BasketContext.Provider value={[context, setContext]}>
+      <BasketContext.Provider value={value}>
         <NavBar />
         <Container />
         <Footer />

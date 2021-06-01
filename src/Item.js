@@ -17,6 +17,7 @@ function Item({ match }) {
   const [minMaxPrice, setMinMaxPrice] = useState([]);
   const [marques, setMarques] = useState({});
   const [marquesFilter, setMarquesFilter] = useState({});
+  console.log("from Item");
   const memoizedGetData = useCallback(() => {
     axios
       .get(`http://localhost:3000/${match.params.item}`)

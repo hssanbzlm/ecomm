@@ -33,3 +33,9 @@ export function initializeFilterMarque(data) {
   }
   return marquesFilter;
 }
+
+export function calculSum(data) {
+  return data.reduce((acc, current) => {
+    return acc + current.qte * current.price;
+  }, 0);
+}

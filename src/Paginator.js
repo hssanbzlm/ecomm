@@ -5,7 +5,7 @@ import "./paginator.css";
 
 function Paginator({ data, pageSize, priceFilter, marquesFilter }) {
   const [currentPage, setCurrentPage] = useState(1);
-
+  console.log("from paginator");
   const NumberOfPagination = Math.ceil(
     data.filter(
       (v) =>

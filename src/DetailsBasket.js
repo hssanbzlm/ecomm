@@ -1,11 +1,116 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { BasketContext } from "./Context";
 import "./detailsbasket.css";
-function DetailsBasket() {
+import { calculSum } from "./services";
+import DeleteIcon from "@material-ui/icons/Delete";
+import Button from "@material-ui/core/Button";
+
+function DetailsBasket({ history }) {
   const [basket, setBasket] = useContext(BasketContext);
+  const [sum, setSum] = useState();
+  useEffect(() => {
+    if (basket.length) {
+      setSum(calculSum(basket));
+    } else setSum(0);
+  }, [basket]);
+
+  function removeItem(id) {
+    setBasket(basket.filter((v) => v.id !== id));
+  }
+
+  function incrementItem(id) {
+    setBasket(
+      [...basket].map((v) => {
+        if (v.id === id) return { ...v, qte: ++v.qte };
+        else return v;
+      })
+    );
+  }
+  function decrementItem(id) {
+    setBasket(
+      [...basket].map((v) => (v.id === id ? { ...v, qte: --v.qte } : v))
+    );
+  }
+
+  function handleClickCommande() {
+    history.push("/commande");
+  }
 
   return (
-    <div className="details-basket-container">{basket.map((v) => v.id)}</div>
+    <div className="details-basket-container">
+      {basket.length > 0 && (
+        <table className="table table-striped">
+          <tbody>
+            {basket.map((v) => {
+              return (
+                <tr key={v.id}>
+                  <td>{v.title}</td>
+                  <td>{v.price}</td>
+                  <td>
+                    <span
+                      style={{ cursor: "pointer" }}
+                      onClick={() => incrementItem(v.id)}
+                    >
+                      +
+                    </span>
+                    {v.qte}
+                    <span
+                      style={{ cursor: "pointer" }}
+                      onClick={() =>
+                        v.qte > 1 ? decrementItem(v.id) : undefined
+                      }
+                    >
+                      -
+                    </span>
+                  </td>
+                  <td>{v.qte * v.price}</td>
+                  <td style={{ width: "8.33%" }}>
+                    {" "}
+                    <span
+                      onClick={() => removeItem(v.id)}
+                      style={{ width: "100%", height: "100%" }}
+                    >
+                      <DeleteIcon style={{ cursor: "pointer" }} />
+                    </span>
+                  </td>
+                </tr>
+              );
+            })}
+            <tr>
+              <td>Total</td>
+              <td></td>
+              <td></td>
+              <td>{sum}</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={handleClickCommande}
+                >
+                  Commande
+                </Button>{" "}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      )}
+      {basket.length === 0 && (
+        <div
+          className="alert alert-warning"
+          role="alert"
+          style={{ height: "10%" }}
+        >
+          Your cart is empty- buy some items please !
+        </div>
+      )}
+    </div>
   );
 }
 
