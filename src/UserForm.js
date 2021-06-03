@@ -32,7 +32,7 @@ function UserForm() {
   }, [errors]);
 
   return (
-    <div style={{ width: "100%" }}>
+    <div>
       <form className="form-container">
         <div className="item-name">
           <label htmlFor="name">Name</label>

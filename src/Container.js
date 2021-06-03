@@ -10,7 +10,11 @@ function Container() {
   return (
     <div className="main-container">
       <Switch>
-        <Route exact path="/detailsbasket" component={DetailsBasket} />
+        <Route
+          exact
+          path="/detailsbasket"
+          render={() => <DetailsBasket manageBasket={true} />}
+        />
         <Route exact path="/commande">
           {basket.length > 0 ? <Commande /> : <Redirect to="/pc" />}
         </Route>

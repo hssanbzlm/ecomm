@@ -10,8 +10,9 @@
 
     width: 48%; 
     background-color: darkorange;
-    display: flex;
+    display: flex;  
     justify-content: center;
+    
   }
 
   .user-commande{
