@@ -25,77 +25,85 @@ function UserForm() {
     setErrors(validateForm(values));
   }, [values]);
 
+  useEffect(() => {
+    if (Object.keys(errors).length === 0 && submitted) {
+      console.log("SUCCESS");
+    }
+  }, [errors]);
+
   return (
-    <div>
-      <form>
-        <div className="form-group">
+    <div style={{ width: "100%" }}>
+      <form className="form-container">
+        <div className="item-name">
           <label htmlFor="name">Name</label>
           <input
             name="name"
             type="text"
             value={values.name}
             onChange={handleChange}
-            className="form-control"
           ></input>
           {submitted && errors.name && (
-            <small className="form-text text-muted">{errors.name}</small>
+            <small className="item-error">{errors.name}</small>
           )}
         </div>
-        <div className="form-group">
-          <label htmlFor="lastName">Lastname</label>
+
+        <div className="item-lastname">
+          <label htmlFor="lastname">Lastname</label>
           <input
             name="lastName"
             type="text"
             value={values.lastName}
             onChange={handleChange}
-            className="form-control"
           ></input>
           {submitted && errors.lastName && (
-            <small className="form-text text-muted">{errors.lastName}</small>
+            <small className="item-error">{errors.lastName}</small>
           )}
         </div>
-        <div className="form-group">
+
+        <div className="item-address">
           <label htmlFor="address">Address</label>
           <input
             name="address"
             type="text"
             value={values.address}
             onChange={handleChange}
-            className="form-control"
           ></input>
-
           {submitted && errors.address && (
-            <div className="form-text text-muted">{errors.address}</div>
+            <small className="item-error">{errors.address}</small>
           )}
         </div>
-        <div className="form-group">
+
+        <div className="item-email">
           <label htmlFor="email">Email</label>
           <input
             name="email"
-            type="email"
+            type="text"
             value={values.email}
             onChange={handleChange}
-            className="form-control"
           ></input>
           {submitted && errors.email && (
-            <div className="form-text text-muted">{errors.email}</div>
+            <small className="item-error">{errors.email}</small>
           )}
         </div>
-        <div className="form-group">
-          <label htmlFor="Tel">Mobile number</label>
+
+        <div className="item-mobile">
+          <label htmlFor="mobile">Mobile</label>
           <input
-            className="form-control"
             name="tel"
             type="number"
+            value={values.tel}
             onChange={handleChange}
           ></input>
           {submitted && errors.tel && (
-            <div className="form-text text-muted">{errors.tel}</div>
+            <small className="item-error">{errors.tel}</small>
           )}
         </div>
-        <button className="btn btn-primary" onClick={handleForm}>
-          Submit
-        </button>
+
+        <div className="btn-container">
+          <button className="btn btn-primary " onClick={handleForm}>
+            Command
+          </button>
+        </div>
       </form>
     </div>
   );
