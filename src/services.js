@@ -13,7 +13,7 @@ export function findMinPrice(data) {
 }
 
 export function countMarques(data) {
-  var marques = {};
+  const marques = {};
   for (let i = 0; i < data.length; i++) {
     if (marques[data[i].marque]) {
       marques[data[i].marque]++;
@@ -27,7 +27,7 @@ export function initializeFilterMarque(data) {
   var marquesFilter = {};
 
   for (let i = 0; i < data.length; i++) {
-    if (!marquesFilter[data[i].marque]) {
+    if (!marquesFilter[data[i].marque] && data[i].marque) {
       marquesFilter[data[i].marque] = true;
     }
   }
@@ -47,23 +47,23 @@ export function validateForm(data) {
   if (!data.email) {
     errors.email = "Email is required";
   } else if (!emailRegex.test(data.email)) {
-    errors.email = "Invalid email address";
+    errors.email = "Invalid email";
   }
   if (!data.name) {
     errors.name = "Name is required";
   } else if (!nameRegex.test(data.name)) {
-    errors.name = "Invalid name ";
+    errors.name = "Invalid name";
   }
 
   if (!data.lastName) {
     errors.lastName = "Lastname is required";
   } else if (!nameRegex.test(data.lastName)) {
-    errors.lastName = "Invalid lastname ";
+    errors.lastName = "Invalid lastname";
   }
   if (!data.address) {
     errors.address = "Address is required";
   } else if (data.address.trim().length < 15) {
-    errors.address = "Invalid Adress";
+    errors.address = "Invalid address";
   }
   if (!data.tel) {
     errors.tel = "Mobile number is required";
