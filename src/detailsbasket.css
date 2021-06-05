@@ -3,5 +3,6 @@
     width: 98%;
     height: 95%;
     background-color: darkcyan;
+    align-items: flex-start ;
     justify-content: center;
   }

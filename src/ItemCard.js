@@ -1,8 +1,16 @@
-import React, { memo, useCallback, useContext, useMemo } from "react";
+import React, {
+  lazy,
+  memo,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
+} from "react";
 import { BasketContext } from "./Context";
-
+const ModalComponent = lazy(() => import("./ModalComponent"));
 function ItemCard({ item }) {
   const [basket, setBasket] = useContext(BasketContext);
+  const [showModal, setShowModal] = useState(false);
 
   function addItem() {
     const index = basket.findIndex((v) => v.id === item.id);
@@ -15,6 +23,11 @@ function ItemCard({ item }) {
       newItem.qte = 1;
       setBasket(basket.concat([newItem]));
     }
+    setShowModal(true);
+  }
+
+  function toggleModal() {
+    setShowModal(false);
   }
 
   return (
@@ -32,6 +45,17 @@ function ItemCard({ item }) {
           Add to cart
         </button>
       </div>
+
+      {showModal && (
+        <ModalComponent>
+          <div>
+            <h1> {item.title} has been added to your basket </h1>{" "}
+            <div className="buttons">
+              <button onClick={toggleModal}> Close</button>{" "}
+            </div>{" "}
+          </div>{" "}
+        </ModalComponent>
+      )}
     </div>
   );
 }
