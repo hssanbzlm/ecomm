@@ -9,6 +9,7 @@ import findMaxPrice, {
   initializeFilterMarque,
   countMarques,
 } from "./services";
+import { useHistory } from "react-router";
 
 function Item({ match }) {
   const [items, setItems] = useState(null);
@@ -17,17 +18,15 @@ function Item({ match }) {
   const [minMaxPrice, setMinMaxPrice] = useState([]);
   const [marques, setMarques] = useState({});
   const [marquesFilter, setMarquesFilter] = useState({});
-  console.log("from Item");
+  const history = useHistory();
   const memoizedGetData = useCallback(() => {
     axios
       .get(`http://localhost:3000/${match.params.item}`)
       .then((res) => {
         setItems(res.data);
       })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [match.params.item]);
+      .catch(() => history.push("/notfound"));
+  }, [match.params.item, history]);
 
   useEffect(() => {
     setLoadFilter(false);

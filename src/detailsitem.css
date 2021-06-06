@@ -1,0 +1,7 @@
+.details-item-container{
+    display: flex;
+    width: 98%;
+    height: 95%;
+    background-color:palegreen;
+    justify-content:space-between;
+}

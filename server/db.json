@@ -5,63 +5,91 @@
             "title": "pc1",
             "description": "seconddezerezd",
             "price": 450,
-            "marque": "HP"
+            "marque": "HP",
+            "img": [
+                "http://placekitten.com/200/300",
+                "https://via.placeholder.com/150"
+            ]
         },
         {
             "id": "2",
             "title": "pc2",
             "description": "firsttt",
             "price": 1200,
-            "marque": "DELL"
+            "marque": "DELL",
+            "img": [
+                "https://via.placeholder.com/150"
+            ]
         },
         {
             "id": "3",
             "title": "pc3",
             "description": "efhg",
             "price": 890,
-            "marque": "ASUS"
+            "marque": "ASUS",
+            "img": [
+                "https://via.placeholder.com/150"
+            ]
         },
         {
             "id": "4",
             "title": "pc4",
             "description": "c'est le pc num4",
             "price": 1500,
-            "marque": "TOSHIBA"
+            "marque": "TOSHIBA",
+            "img": [
+                "https://via.placeholder.com/150"
+            ]
         },
         {
             "id": "5",
             "title": "pc5",
             "description": "c'est le pc num5",
             "price": 550,
-            "marque": "TOSHIBA"
+            "marque": "TOSHIBA",
+            "img": [
+                "https://via.placeholder.com/150"
+            ]
         },
         {
             "id": "6",
             "title": "pc6",
             "description": "c'est le pc num6",
             "price": 900,
-            "marque": "DELL"
+            "marque": "DELL",
+            "img": [
+                "https://via.placeholder.com/150"
+            ]
         },
         {
             "id": "7",
             "title": "pc7",
             "description": "c'est le pc num7",
             "price": 750,
-            "marque": "ASUS"
+            "marque": "ASUS",
+            "img": [
+                "https://via.placeholder.com/150"
+            ]
         },
         {
             "id": "8",
             "title": "pc8",
             "description": "c'est le pc num8",
             "price": 1050,
-            "marque": "HP"
+            "marque": "HP",
+            "img": [
+                "https://via.placeholder.com/150"
+            ]
         },
         {
             "id": "9",
             "title": "pc9",
             "description": "c'est le pc num9",
             "price": 7500,
-            "marque": "DELL"
+            "marque": "DELL",
+            "img": [
+                "https://via.placeholder.com/150"
+            ]
         }
     ],
     "phone": [
@@ -70,63 +98,90 @@
             "title": "from phone",
             "description": "phone 1",
             "price": 350,
-            "marque": "SAMSUNG"
+            "marque": "SAMSUNG",
+            "img": [
+                "https://via.placeholder.com/150"
+            ]
         },
         {
             "id": "2",
             "title": "firsttt",
             "description": "PHONE2",
             "price": 2000,
-            "marque": "APPLE"
+            "marque": "APPLE",
+            "img": [
+                "https://via.placeholder.com/150"
+            ]
         },
         {
             "id": "3",
             "title": "phone3",
             "description": "efhg",
             "price": 790,
-            "marque": "SAMSUNG"
+            "marque": "SAMSUNG",
+            "img": [
+                "https://via.placeholder.com/150"
+            ]
         },
         {
             "id": "4",
             "title": "phone4",
             "description": "fourth",
             "price": 350,
-            "marque": "HUAWEI"
+            "marque": "HUAWEI",
+            "img": [
+                "https://via.placeholder.com/150"
+            ]
         },
         {
             "id": "5",
             "title": "fifth",
             "description": "fifth",
             "price": 2500,
-            "marque": "HUAWEI"
+            "marque": "HUAWEI",
+            "img": [
+                "https://via.placeholder.com/150"
+            ]
         },
         {
             "id": "6",
             "title": "sixth",
             "description": "sixth",
             "price": 790,
-            "marque": "APPLE"
+            "marque": "APPLE",
+            "img": [
+                "https://via.placeholder.com/150"
+            ]
         },
         {
             "id": "7",
             "title": "seventh",
             "description": "seventh",
             "price": 790,
-            "marque": "SAMSUNG"
+            "marque": "SAMSUNG",
+            "img": [
+                "https://via.placeholder.com/150"
+            ]
         },
         {
             "id": "8",
             "title": "8",
             "description": "8",
             "price": 490,
-            "marque": "SAMSUNG"
+            "marque": "SAMSUNG",
+            "img": [
+                "https://via.placeholder.com/150"
+            ]
         },
         {
             "id": "9",
             "title": "nine",
             "description": "nine",
             "price": 300,
-            "marque": "Evertek"
+            "marque": "Evertek",
+            "img": [
+                "https://via.placeholder.com/150"
+            ]
         }
     ]
 }
