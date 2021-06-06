@@ -1,11 +1,11 @@
 import "./App.css";
 import React, { useState } from "react";
-import Footer from "./Footer";
-import NavBar from "./NavBar";
-import Container from "./Container";
+import Footer from "./common/Footer";
+import NavBar from "./common/NavBar";
+import Container from "./router/Container";
 import { BrowserRouter as Router } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BasketContext } from "./Context";
+import { BasketContext } from "./commande/Context";
 import { Suspense } from "react";
 import CircularProgress from "@material-ui/core/CircularProgress";
 

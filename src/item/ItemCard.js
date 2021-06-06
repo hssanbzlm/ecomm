@@ -6,9 +6,9 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { BasketContext } from "./Context";
+import { BasketContext } from "../commande/Context";
 import { useHistory, useLocation } from "react-router-dom";
-const ModalComponent = lazy(() => import("./ModalComponent"));
+const ModalComponent = lazy(() => import("../common/ModalComponent"));
 function ItemCard({ item }) {
   const [basket, setBasket] = useContext(BasketContext);
   const [showModal, setShowModal] = useState(false);

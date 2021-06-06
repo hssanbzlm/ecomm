@@ -8,7 +8,7 @@ import findMaxPrice, {
   findMinPrice,
   initializeFilterMarque,
   countMarques,
-} from "./services";
+} from "../utility/services";
 import { useHistory } from "react-router";
 
 function Item({ match }) {

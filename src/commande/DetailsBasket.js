@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { BasketContext } from "./Context";
 import "./detailsbasket.css";
-import { calculSum } from "./services";
+import { calculSum } from "../utility/services";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Button from "@material-ui/core/Button";
 import { useHistory } from "react-router-dom";

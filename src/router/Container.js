@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import "./container.css";
 import { Route, Switch, Redirect } from "react-router-dom";
-import DetailsBasket from "./DetailsBasket";
-import Item from "./Item";
-import Commande from "./Commande";
-import DetailsItem from "./DetailsItem";
-import NotFound from "./NotFound";
-import { BasketContext } from "./Context";
+import DetailsBasket from "../commande/DetailsBasket";
+import Item from "../item/Item";
+import Commande from "../commande/Commande";
+import DetailsItem from "../item/DetailsItem";
+import NotFound from "../common/NotFound";
+import { BasketContext } from "../commande/Context";
 function Container() {
   const [basket] = useContext(BasketContext);
   return (
