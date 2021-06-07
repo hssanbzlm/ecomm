@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { validateForm } from "../utility/services";
+import ModalComponent from "../common/ModalComponent";
 import "./userform.css";
 function UserForm() {
   const initialValues = {
@@ -13,10 +14,14 @@ function UserForm() {
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   function handleForm(e) {
     e.preventDefault();
     setSubmitted(true);
     setErrors(validateForm(values));
+    if (Object.keys(errors).length === 0) {
+      setShowModal(true);
+    }
   }
   function handleChange(e) {
     setValues({ ...values, [e.target.name]: e.target.value });
@@ -30,9 +35,12 @@ function UserForm() {
       console.log("SUCCESS");
     }
   }, [errors]);
-
+  function toggleModal() {
+    setShowModal(false);
+    window.location.reload();
+  }
   return (
-    <div>
+    <div style={{ width: "100%" }}>
       <form className="form-container">
         <div className="item-name">
           <label htmlFor="name">Name</label>
@@ -100,11 +108,20 @@ function UserForm() {
         </div>
 
         <div className="btn-container">
-          <button className="btn btn-primary " onClick={handleForm}>
-            Command
-          </button>
+          <button onClick={handleForm}>Command</button>
         </div>
       </form>
+      {showModal && Object.keys(errors).length === 0 && submitted && (
+        <ModalComponent>
+          <div>
+            {" "}
+            Thanks for your confidence in our products{" "}
+            <div className="buttons">
+              <button onClick={toggleModal}> Close</button>{" "}
+            </div>{" "}
+          </div>{" "}
+        </ModalComponent>
+      )}
     </div>
   );
 }

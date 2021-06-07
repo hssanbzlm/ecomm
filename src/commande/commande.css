@@ -11,14 +11,30 @@
     width: 48%; 
     background-color: darkorange;
     display: flex;  
-    justify-content: center;
+    justify-content: flex-start;
     
   }
 
   .user-commande{
-
    width: 48%;
    background-color: deeppink;
+  }
 
 
+  @media screen and (max-width:959px) { 
+
+
+    .commande-container{
+   
+     flex-direction: column;
+     justify-content: space-between;
+     align-items: center;
+    } 
+
+    .user-form-container{
+      width: 80%;   
+      height: 45%;
+    } 
+
+    
   }

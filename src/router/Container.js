@@ -23,6 +23,9 @@ function Container() {
         </Route>
         <Route exact path="/:item" component={Item} />
         <Route exact path="/:item/:itemId" component={DetailsItem} />
+        <Route exact path="/" component={Item}>
+          <Redirect to="/pc" />
+        </Route>
       </Switch>
     </div>
   );

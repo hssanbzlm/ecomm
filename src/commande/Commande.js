@@ -10,7 +10,6 @@ function Commande() {
         <UserForm />
       </div>
       <div className="user-commande">
-        <h1 style={{ textAlign: "center" }}> YOUR COMMANDE</h1>
         <DetailsBasket manageBasket={false} />
       </div>
     </div>
