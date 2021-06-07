@@ -18,9 +18,24 @@ function DetailsItem() {
   }, [item, itemId, history]);
 
   return (
-    <div className="details-item-container">
-      {itemDetails && <Carousel images={itemDetails.img} />}
-    </div>
+    <>
+      {itemDetails && (
+        <div className="details-item-container">
+          <Carousel images={itemDetails.img} />
+          <div className="title-description-price-container">
+            <div className="title-container">
+              <span className="item-title">{itemDetails.title}</span>
+              <span className="item-price">{itemDetails.price} DT</span>
+            </div>
+            <div className="description-container">
+              <span className="item-description">
+                {itemDetails.description}
+              </span>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 

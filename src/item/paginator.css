@@ -13,4 +13,16 @@
     width: 98%;
     height: 90%;
     background-color: salmon;
+    align-items: center;
 }
+
+
+@media screen and (max-width:970px) {
+
+    .items-data{
+        align-items: flex-start; 
+        flex-wrap: wrap;
+    }
+    
+        
+    }

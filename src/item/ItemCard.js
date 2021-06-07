@@ -8,6 +8,7 @@ import React, {
 } from "react";
 import { BasketContext } from "../commande/Context";
 import { useHistory, useLocation } from "react-router-dom";
+import "./itemcard.css";
 const ModalComponent = lazy(() => import("../common/ModalComponent"));
 function ItemCard({ item }) {
   const [basket, setBasket] = useContext(BasketContext);
@@ -41,30 +42,22 @@ function ItemCard({ item }) {
   }
 
   return (
-    <div
-      onClick={rediredtToDetailsItem}
-      className="card"
-      style={{ width: "17%", height: "90%", cursor: "pointer" }}
-    >
-      <img
-        style={{ height: "50%" }}
-        alt="img"
-        className="card-img-top"
-        src={item.img[0]}
-      />
-      <div className="card-body">
-        <h5 className="card-title">{item.title}</h5>
-        <p className="card-text">{item.marque}</p>
-        <p className="card-text">{item.price}</p>
-        <button className="btn btn-primary" onClick={addItem}>
-          Add to cart
-        </button>
+    <div onClick={rediredtToDetailsItem} className="card-container">
+      <img className="item-card-img" alt="img" src={item.img[0]} />
+      <div className="item-card-content">
+        <h5 className="item-card-title">{item.title}</h5>
+        <p className="item-card-price">{item.price} DT</p>
+        <button onClick={addItem}>Add to cart</button>
       </div>
 
       {showModal && (
         <ModalComponent>
           <div>
-            <h1> {item.title} has been added to your basket </h1>{" "}
+            {" "}
+            <b>{item.title}</b> has been added to your basket.{" "}
+            <span className="modal-msg">
+              You can modify the quantiy in basket section above{" "}
+            </span>
             <div className="buttons">
               <button onClick={toggleModal}> Close</button>{" "}
             </div>{" "}

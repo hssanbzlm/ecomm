@@ -51,10 +51,17 @@ const FilterItems = React.memo(function FilterItems({
         style={{
           display: "flex",
           flexDirection: "column",
+          width: "70%",
         }}
       >
         {Object.keys(marques).map((marque, i) => (
-          <label key={i}>
+          <label
+            key={i}
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+            }}
+          >
             {" "}
             {`${marque} (${marques[marque]})`}
             <input
@@ -63,6 +70,7 @@ const FilterItems = React.memo(function FilterItems({
               key={i}
               onChange={handleMarquesChange}
               checked={checked[marque]}
+              style={{ height: "100%" }}
             />
           </label>
         ))}

@@ -21,13 +21,24 @@ body {
 
 #modal>div {
   background-color: white;
-  max-width: 500px;
+  width: 25%;
   padding: 15px;
   border-radius: 5px;
-  text-align: center;
+  text-align: center; 
+  font-family: cursive;
+  font-size: 1.2rem;
 }
 
-#modal .buttons button {
-  display: inline-block;
-  margin-right: 15px;
-}
+@media screen and (max-width:970px) {
+
+ .modal-msg{
+   display: none;
+ } 
+ #modal>div{ 
+   font-size: 16px;
+
+ }
+  
+      
+  }
+
