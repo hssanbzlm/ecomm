@@ -1,9 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import ItemCard from "./ItemCard";
 import Pagination from "./Pagination";
 import "./paginator.css";
 
-function Paginator({ data, pageSize, priceFilter, marquesFilter }) {
+const Paginator = React.memo(function Paginator({
+  data,
+  pageSize,
+  priceFilter,
+  marquesFilter,
+}) {
   const [currentPage, setCurrentPage] = useState(1);
   console.log("from paginator");
   const NumberOfPagination = Math.ceil(
@@ -19,10 +24,12 @@ function Paginator({ data, pageSize, priceFilter, marquesFilter }) {
     setCurrentPage(1);
   }, [data, priceFilter, marquesFilter]);
 
-  function getCurrentPage(page) {
-    setCurrentPage(page);
-  }
-  console.log(NumberOfPagination);
+  const getCurrentPage = useCallback(
+    (page) => {
+      setCurrentPage(page);
+    },
+    [setCurrentPage]
+  );
 
   return (
     <div className="paginator-container">
@@ -46,6 +53,6 @@ function Paginator({ data, pageSize, priceFilter, marquesFilter }) {
       />
     </div>
   );
-}
+});
 
 export default Paginator;

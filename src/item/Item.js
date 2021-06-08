@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import "./item.css";
 import axios from "axios";
 import Paginator from "./Paginator";
@@ -12,6 +12,7 @@ import findMaxPrice, {
 import { useHistory } from "react-router";
 
 function Item({ match }) {
+  console.log("item");
   const [items, setItems] = useState(null);
   const [priceFilter, setPriceFilter] = useState([]);
   const [loadFilter, setLoadFilter] = useState();
@@ -31,6 +32,7 @@ function Item({ match }) {
   useEffect(() => {
     setLoadFilter(false);
     memoizedGetData();
+    console.log("hello");
   }, [memoizedGetData]);
 
   useEffect(() => {
@@ -45,25 +47,29 @@ function Item({ match }) {
       setMarquesFilter(filterMarques);
       setLoadFilter(true);
     }
+    console.log("hello");
   }, [items]);
 
-  const memoizedHandlePriceFilter = useCallback(
+  const HandlePriceFilter = useCallback(
     (v) => {
       setPriceFilter(v);
     },
     [setPriceFilter]
   );
-  function handleMarquesFilter(marques) {
-    const data = Object.assign({}, marquesFilter);
-    data[marques.value] = marques.checked;
-    setMarquesFilter(data);
-  }
+  const handleMarquesFilter = useCallback(
+    (marques) => {
+      const data = Object.assign({}, marquesFilter);
+      data[marques.value] = marques.checked;
+      setMarquesFilter(data);
+    },
+    [marquesFilter]
+  );
   return (
     <div className="item-container">
       {loadFilter ? (
         <>
           <FilterItems
-            handlePriceFilter={memoizedHandlePriceFilter}
+            handlePriceFilter={HandlePriceFilter}
             initMinMaxPrice={minMaxPrice}
             value={priceFilter}
             marques={marques}

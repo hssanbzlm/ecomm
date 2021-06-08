@@ -10,6 +10,7 @@ const FilterItems = React.memo(function FilterItems({
   marques,
   handleMarquesFilter,
 }) {
+  console.log("from filter items");
   const [checked, setChecked] = useState(() => {
     const initChecks = {};
     for (const [key, value] of Object.entries(marques)) {

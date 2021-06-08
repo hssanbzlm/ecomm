@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import "./pagination.css";
-function Pagination({ numberOfPagination, getPageNumber, activePage }) {
+const Pagination = React.memo(function Pagination({
+  numberOfPagination,
+  getPageNumber,
+  activePage,
+}) {
   if (numberOfPagination <= 1) {
     return null;
   }
+  console.log("from pagination");
 
   function handlePagination(e) {
     getPageNumber(e.target.value);
@@ -27,6 +32,6 @@ function Pagination({ numberOfPagination, getPageNumber, activePage }) {
       <ul>{pagination}</ul>
     </div>
   );
-}
+});
 
 export default Pagination;

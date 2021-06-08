@@ -11,6 +11,7 @@ import { useHistory, useLocation } from "react-router-dom";
 import "./itemcard.css";
 const ModalComponent = lazy(() => import("../common/ModalComponent"));
 function ItemCard({ item }) {
+  console.log("item card");
   const [basket, setBasket] = useContext(BasketContext);
   const [showModal, setShowModal] = useState(false);
   const location = useLocation();
