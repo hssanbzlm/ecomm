@@ -10,6 +10,7 @@ import findMaxPrice, {
   countMarques,
 } from "../utility/services";
 import { useHistory } from "react-router";
+const baseUrl = "http://localhost:3000/";
 
 function Item({ match }) {
   console.log("item");
@@ -22,7 +23,7 @@ function Item({ match }) {
   const history = useHistory();
   const memoizedGetData = useCallback(() => {
     axios
-      .get(`http://localhost:3000/${match.params.item}`)
+      .get(`${baseUrl}${match.params.item}`)
       .then((res) => {
         setItems(res.data);
       })

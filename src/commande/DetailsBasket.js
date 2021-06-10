@@ -53,7 +53,7 @@ function DetailsBasket({ manageBasket }) {
                   <td>
                     {manageBasket && (
                       <span
-                        style={{ cursor: "pointer" }}
+                        style={{ cursor: "pointer", color: "green" }}
                         onClick={() => incrementItem(v.id)}
                       >
                         +
@@ -62,7 +62,7 @@ function DetailsBasket({ manageBasket }) {
                     {v.qte}
                     {manageBasket && (
                       <span
-                        style={{ cursor: "pointer" }}
+                        style={{ cursor: "pointer", color: "red" }}
                         onClick={() =>
                           v.qte > 1 ? decrementItem(v.id) : undefined
                         }

@@ -9,10 +9,10 @@
 ul{
 list-style-type:none;
 display: flex;
-background-color: red;
 width: 100%;
 height: 100%;
 justify-content: center;
+
 }
 
 li{
@@ -27,5 +27,5 @@ li:hover{
 }
 
 .is-active{
-    color: yellow;
+    color: rgb(223, 190, 5);
 }

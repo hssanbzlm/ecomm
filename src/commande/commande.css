@@ -2,14 +2,12 @@
     display: flex;
     width: 98%;
     height: 95%;
-    background-color:purple;
     justify-content:space-between;
   }
   
   .user-form-container{
 
     width: 48%; 
-    background-color: darkorange;
     display: flex;  
     justify-content: flex-start;
     
@@ -17,7 +15,6 @@
 
   .user-commande{
    width: 48%;
-   background-color: deeppink;
   }
 
 

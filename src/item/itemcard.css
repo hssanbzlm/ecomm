@@ -6,12 +6,15 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: black 1px solid;
+    border: rgb(29, 29, 29) 1px solid;
+    border-radius: 10px;
 }
 
 .item-card-img{
 
     height: 50%;
+    border-radius: 10px;
+
 }
 .item-card-content{
     height: 50%;
@@ -19,6 +22,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-size: 14px;
 
 } 
 

@@ -2,11 +2,55 @@
     display: grid;
     grid-template-rows: 15% 15% 15% 15%;
     grid-template-columns: 40% 40%;
-    background-color: royalblue; 
-    column-gap: 1%;
-    row-gap: 1%;
+    column-gap: 5%;
+    row-gap: 0.5%;
     width: 100%;
     height: 100%;
+    border-right: rgb(212, 182, 8) 1px solid;
+}
+input[type="text"]{
+    border :1px solid lightgrey;
+    border-radius: 30px;
+    outline: none;
+    width: 100%;
+    text-align: center;
+}
+input[type="number"]{
+    border :1px solid lightgrey;
+    border-radius: 30px;
+    outline: none;
+    width: 100%;
+    text-align: center;
+}
+
+.form-container label{
+    font-style: italic;
+    font-size: 14px;
+}
+
+input:hover{
+    box-shadow: 0px 2px 6px lightgray;
+
+}
+.btn-container button{ 
+    border-radius: 0.3rem;
+    padding:0.3em 1.2em;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color:black;
+    color: rgb(214, 183, 8);
+    border: rgba(214,183,8) 1px solid;
+    font-style: italic;
+
+}
+.btn-container button:hover{ 
+    border-radius: 0.3rem;
+    padding:0.3em 1.2em;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color:rgba(214,183,8);
+    color: black;
+    border: black 1px solid;
+    font-style: italic;
+
 }
 
 .item-name{
@@ -76,6 +120,7 @@ grid-template-columns: 50% 50%;
     grid-row-end: 3;
     grid-column-start: 2;
     grid-column-end: 3;
+    color: red;
 }
 
 @media screen and (max-width:959px) {
@@ -84,8 +129,13 @@ grid-template-columns: 50% 50%;
         display: grid;
         grid-template-rows: 15% 15% 15% 15% 15% 15%;
         grid-template-columns: 60%;
-        background-color: royalblue; 
+        border-right:0;
+
        
+    } 
+
+    .btn-container button{
+        font-size: 9px;
     }
 
     
@@ -159,7 +209,7 @@ grid-template-columns: 50% 50%;
     }
     
     
-     
+    
             
                 
 } 

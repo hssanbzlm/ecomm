@@ -3,12 +3,13 @@
         {
             "id": "1",
             "title": "pc1",
-            "description": "seconddezerezd",
+            "description": "Double SIM - Ecran 5- Processeur Quad-Core 1.3GHz - RAM 1 Go - Mémoire 16 Go - Android 10 Edition Go - Appareils Photos 5 MP (Arrière), 2 MP (Frontale) - 3G - Wifi - GPS - Batterie 2400 mAh - Couleur: Noir - Garantie 1 an",
             "price": 450,
             "marque": "HP",
             "img": [
-                "http://placekitten.com/200/300",
-                "https://via.placeholder.com/150"
+                "https://res.cloudinary.com/djua4e1uq/image/upload/v1623177789/HP/1/pc-portable-hp-15s-eq1003nk-amd-dual-core-8-go-noir51_2_o7g58b.jpg",
+                "https://res.cloudinary.com/djua4e1uq/image/upload/v1623177788/HP/1/pc-portable-hp-15s-eq1003nk-amd-dual-core-8-go-noir515_1_xxjufn.jpg",
+                "https://res.cloudinary.com/djua4e1uq/image/upload/v1623177788/HP/1/pc-portable-hp-15s-eq1003nk-amd-dual-core-8-go-noir_3_hjs6vg.jpg"
             ]
         },
         {
