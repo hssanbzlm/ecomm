@@ -10,7 +10,7 @@ import findMaxPrice, {
   countMarques,
 } from "../utility/services";
 import { useHistory } from "react-router";
-const baseUrl = "http://localhost:3000/";
+const baseUrl = "https://react-ecomm-back.herokuapp.com/item/";
 
 function Item({ match }) {
   console.log("item");

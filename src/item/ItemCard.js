@@ -19,7 +19,7 @@ function ItemCard({ item }) {
 
   function addItem(e) {
     e.stopPropagation();
-    const index = basket.findIndex((v) => v.id === item.id);
+    const index = basket.findIndex((v) => v._id === item._id);
     if (index >= 0) {
       const data = [...basket];
       data[index].qte++;
@@ -39,14 +39,14 @@ function ItemCard({ item }) {
   function rediredtToDetailsItem(e) {
     e.stopPropagation();
     console.log(location.pathname);
-    history.push(`${location.pathname}/${item.id}`);
+    history.push(`${location.pathname}/${item._id}`);
   }
 
   return (
     <div onClick={rediredtToDetailsItem} className="card-container">
       <img className="item-card-img" alt="img" src={item.img[0]} />
       <div className="item-card-content">
-        <h5 className="item-card-title">{item.title}</h5>
+        <p className="item-card-title">{item.title}</p>
         <p className="item-card-price">{item.price} DT</p>
         <button onClick={addItem}>Add to cart</button>
       </div>

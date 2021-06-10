@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Redirect, useHistory, useLocation, useParams } from "react-router";
 import Carousel from "./Carousel";
 import "./detailsitem.css";
-const baseUrl = "http://localhost:3000/";
+const baseUrl = "https://react-ecomm-back.herokuapp.com/item/";
 function DetailsItem() {
   const { itemId, item } = useParams();
   const [itemDetails, setItemsDetails] = useState();
@@ -12,7 +12,7 @@ function DetailsItem() {
     axios
       .get(`${baseUrl}${item}/${itemId}`)
       .then((v) => {
-        setItemsDetails(v.data);
+        setItemsDetails(v.data[0]);
       })
       .catch(() => history.push("/notfound"));
   }, [item, itemId, history]);

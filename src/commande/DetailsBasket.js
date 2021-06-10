@@ -18,20 +18,20 @@ function DetailsBasket({ manageBasket }) {
   }, [basket]);
 
   function removeItem(id) {
-    setBasket(basket.filter((v) => v.id !== id));
+    setBasket(basket.filter((v) => v._id !== id));
   }
 
   function incrementItem(id) {
     setBasket(
       [...basket].map((v) => {
-        if (v.id === id) return { ...v, qte: ++v.qte };
+        if (v._id === id) return { ...v, qte: ++v.qte };
         else return v;
       })
     );
   }
   function decrementItem(id) {
     setBasket(
-      [...basket].map((v) => (v.id === id ? { ...v, qte: --v.qte } : v))
+      [...basket].map((v) => (v._id === id ? { ...v, qte: --v.qte } : v))
     );
   }
 
@@ -47,14 +47,14 @@ function DetailsBasket({ manageBasket }) {
           <tbody>
             {basket.map((v) => {
               return (
-                <tr key={v.id}>
+                <tr key={v._id}>
                   <td>{v.title}</td>
                   <td>{v.price}</td>
                   <td>
                     {manageBasket && (
                       <span
                         style={{ cursor: "pointer", color: "green" }}
-                        onClick={() => incrementItem(v.id)}
+                        onClick={() => incrementItem(v._id)}
                       >
                         +
                       </span>
@@ -64,7 +64,7 @@ function DetailsBasket({ manageBasket }) {
                       <span
                         style={{ cursor: "pointer", color: "red" }}
                         onClick={() =>
-                          v.qte > 1 ? decrementItem(v.id) : undefined
+                          v.qte > 1 ? decrementItem(v._id) : undefined
                         }
                       >
                         -
@@ -76,7 +76,7 @@ function DetailsBasket({ manageBasket }) {
                     <td style={{ width: "8.33%" }}>
                       {" "}
                       <span
-                        onClick={() => removeItem(v.id)}
+                        onClick={() => removeItem(v._id)}
                         style={{ width: "100%", height: "100%" }}
                       >
                         <DeleteIcon style={{ cursor: "pointer" }} />
