@@ -61,6 +61,7 @@ const FilterItems = React.memo(function FilterItems({
             style={{
               display: "flex",
               justifyContent: "space-between",
+              alignItems: "center",
             }}
           >
             {" "}
@@ -71,7 +72,6 @@ const FilterItems = React.memo(function FilterItems({
               key={i}
               onChange={handleMarquesChange}
               checked={checked[marque]}
-              style={{ height: "100%" }}
             />
           </label>
         ))}

@@ -1,26 +1,18 @@
 .paginator-container{
     width: 80%;
-    height: 98%;
     display: flex; 
     align-items:center; 
-    flex-direction: column;   
+    flex-direction: column; 
+    justify-content: space-between;
 }
 .items-data{
-
+    
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 98%;
     height: 90%;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 
-@media screen and (max-width:970px) {
-
-    .items-data{
-        align-items: flex-start; 
-        flex-wrap: wrap;
-    }
-    
-        
-    }

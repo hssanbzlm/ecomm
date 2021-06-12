@@ -2,22 +2,23 @@
     width: 100%;
     height: 5%;
     display: flex;
-    
+    justify-content: center;
+    align-items: center; 
    
 }
 
-ul{
+.pagination ul{
 list-style-type:none;
+width: 50%;
 display: flex;
-width: 100%;
-height: 100%;
 justify-content: center;
-
+margin: 0;
+padding-left: 0;
 }
 
 li{
-    width: 2%;
     height: 100%;
+    margin-left: 5px;
     cursor: pointer;
 }
 li:hover{

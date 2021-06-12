@@ -1,7 +1,7 @@
 .details-item-container{
     display: flex;
     width: 98%;
-    height: 95%;
+    height: 100%;
     flex-direction: column;
     align-items:flex-start;
 }
@@ -12,6 +12,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-top: 10px;
 } 
 
 .title-container{ 
@@ -28,28 +29,48 @@
 }
 .description-container{
     width: 40%;
-    height: 90%;
+    height: fit-content;
     display: flex;
     align-items: center;
+    background-color: rgb(227, 233, 233);
+    border-radius: 10px;
+    text-align:justify;
 
 }
 
 .item-price{
     color: red;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 2.5vw;
+    font-size: 2rem;
 
 } 
 
 .item-title{
-    font-size: 2vw;
+    font-size: 1.5rem;
 
 }
 
 .item-description{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1vw;
+    font-size: 1rem;
     font-style: italic;
     font-weight: bold;
     
+}
+
+
+@media screen and (max-width:500px) {
+    .title-description-price-container{ 
+        flex-direction: column;
+    }
+    
+.description-container{  
+    width: 95%;
+
+} 
+
+.title-container{  
+    width: 95%;
+}
+
 }

@@ -1,18 +1,19 @@
 .item-container {
   display: flex;
   width: 98%;
-  height: 95%;
+  min-height: 500px;
   justify-content: space-between;
+  align-items: center;
 }
 
 
-@media screen and (max-width:805px) {
-
+@media screen and (max-width:600px) { 
   .item-container{
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
+
+    flex-direction: column;
+    align-items: center;
+    
   }
   
-      
-  }
+}
+

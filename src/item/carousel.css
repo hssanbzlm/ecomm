@@ -8,8 +8,8 @@
 } 
 
 .big-img{
-    width: 25%;
-    height: 95%;
+    width: 300px;
+    height: 250px;
 } 
 .big-img img{
     border-radius: 10px;
@@ -36,7 +36,7 @@
 }
 
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:600px) {
 
     .group-img{
       

@@ -1,7 +1,8 @@
 .main-container{
-    height: 83%;
+    height: 93%;
+    width: 100%;
     display: flex;
     justify-content: center; 
-    align-items: flex-end;
-    background-color: rgb(250, 250, 250);
+    align-items: flex-start;
+    flex-grow: 4;
 }

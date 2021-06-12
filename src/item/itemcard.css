@@ -1,6 +1,6 @@
 .card-container{
-    width: 18%; 
-    height: 65%; 
+    width: 220px; 
+    height: 260px; 
     cursor: pointer;
     background-color:white; 
     display: flex;
@@ -8,6 +8,7 @@
     justify-content: space-between;
     border: rgb(29, 29, 29) 1px solid;
     border-radius: 10px;
+    margin: 5px;
 }
 
 .item-card-img{
@@ -22,7 +23,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 1vw;
+    font-size: 15px;
 
 } 
 
@@ -47,11 +48,5 @@
 }
 
 
-@media screen and (max-width:970px) {
-.card-container{
-        width: 40%;
-        height:45% ;
-}     
-    }
 
 
