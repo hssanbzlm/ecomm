@@ -40,72 +40,62 @@ function UserForm() {
     window.location.reload();
   }
   return (
-    <div style={{ width: "100%" }}>
+    <>
       <form className="form-container">
-        <div className="item-name">
-          <label htmlFor="name">Name</label>
-          <input
-            name="name"
-            type="text"
-            value={values.name}
-            onChange={handleChange}
-          ></input>
-          {submitted && errors.name && (
-            <small className="item-error">{errors.name}</small>
-          )}
-        </div>
+        <label htmlFor="name">Name</label>
+        <input
+          name="name"
+          type="text"
+          value={values.name}
+          onChange={handleChange}
+        ></input>
+        {submitted && errors.name && (
+          <small className="item-error">{errors.name}</small>
+        )}
 
-        <div className="item-lastname">
-          <label htmlFor="lastname">Lastname</label>
-          <input
-            name="lastName"
-            type="text"
-            value={values.lastName}
-            onChange={handleChange}
-          ></input>
-          {submitted && errors.lastName && (
-            <small className="item-error">{errors.lastName}</small>
-          )}
-        </div>
+        <label htmlFor="lastname">Lastname</label>
+        <input
+          name="lastName"
+          type="text"
+          value={values.lastName}
+          onChange={handleChange}
+        ></input>
+        {submitted && errors.lastName && (
+          <small className="item-error">{errors.lastName}</small>
+        )}
 
-        <div className="item-address">
-          <label htmlFor="address">Address</label>
-          <input
-            name="address"
-            type="text"
-            value={values.address}
-            onChange={handleChange}
-          ></input>
-          {submitted && errors.address && (
-            <small className="item-error">{errors.address}</small>
-          )}
-        </div>
+        <label htmlFor="address">Address</label>
+        <input
+          name="address"
+          type="text"
+          value={values.address}
+          onChange={handleChange}
+        ></input>
+        {submitted && errors.address && (
+          <small className="item-error">{errors.address}</small>
+        )}
 
-        <div className="item-email">
-          <label htmlFor="email">Email</label>
-          <input
-            name="email"
-            type="text"
-            value={values.email}
-            onChange={handleChange}
-          ></input>
-          {submitted && errors.email && (
-            <small className="item-error">{errors.email}</small>
-          )}
-        </div>
+        <label htmlFor="email">Email</label>
+        <input
+          name="email"
+          type="text"
+          value={values.email}
+          onChange={handleChange}
+        ></input>
+        {submitted && errors.email && (
+          <small className="item-error">{errors.email}</small>
+        )}
 
-        <div className="item-mobile">
-          <label htmlFor="mobile">Mobile</label>
-          <input
-            name="tel"
-            type="number"
-            value={values.tel}
-            onChange={handleChange}
-          ></input>
-          {submitted && errors.tel && (
-            <small className="item-error">{errors.tel}</small>
-          )}
-        </div>
+        <label htmlFor="mobile">Mobile</label>
+        <input
+          name="tel"
+          type="number"
+          value={values.tel}
+          onChange={handleChange}
+        ></input>
+        {submitted && errors.tel && (
+          <small className="item-error">{errors.tel}</small>
+        )}
 
         <div className="btn-container">
           <button onClick={handleForm}>Command</button>
@@ -122,7 +112,7 @@ function UserForm() {
           </div>{" "}
         </ModalComponent>
       )}
-    </div>
+    </>
   );
 }
 

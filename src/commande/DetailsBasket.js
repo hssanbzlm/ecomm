@@ -49,7 +49,7 @@ function DetailsBasket({ manageBasket }) {
               return (
                 <tr key={v._id}>
                   <td>{v.title}</td>
-                  <td>{v.price}</td>
+                  <td>{v.price} DT</td>
                   <td>
                     {manageBasket && (
                       <span
@@ -71,9 +71,9 @@ function DetailsBasket({ manageBasket }) {
                       </span>
                     )}
                   </td>
-                  <td>{v.qte * v.price}</td>
+                  <td>{v.qte * v.price} DT </td>
                   {manageBasket && (
-                    <td style={{ width: "8.33%" }}>
+                    <td>
                       {" "}
                       <span
                         onClick={() => removeItem(v._id)}
@@ -90,7 +90,7 @@ function DetailsBasket({ manageBasket }) {
               <td>Total</td>
               <td></td>
               <td></td>
-              <td>{sum}</td>
+              <td>{sum} DT </td>
               {manageBasket && <td></td>}
             </tr>
             <tr>
