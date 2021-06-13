@@ -1,8 +1,7 @@
-const express = require("express");
+import express from "express";
+import { join } from "path";
 const app = express();
-const path = require("path");
-app.use(express.static(path.join(__dirname, "build")));
 
 app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+  res.sendFile(join(__dirname, "build", "index.html"));
 });
