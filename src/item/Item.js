@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./item.css";
 import axios from "axios";
 import Paginator from "./Paginator";
@@ -13,7 +13,6 @@ import { useHistory } from "react-router";
 const baseUrl = "https://react-ecomm-back.herokuapp.com/item/";
 
 function Item({ match }) {
-  console.log("item");
   const [items, setItems] = useState(null);
   const [priceFilter, setPriceFilter] = useState([]);
   const [loadFilter, setLoadFilter] = useState();
@@ -33,7 +32,6 @@ function Item({ match }) {
   useEffect(() => {
     setLoadFilter(false);
     memoizedGetData();
-    console.log("hello");
   }, [memoizedGetData]);
 
   useEffect(() => {
@@ -48,7 +46,6 @@ function Item({ match }) {
       setMarquesFilter(filterMarques);
       setLoadFilter(true);
     }
-    console.log("hello");
   }, [items]);
 
   const HandlePriceFilter = useCallback(

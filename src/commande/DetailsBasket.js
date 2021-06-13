@@ -36,7 +36,6 @@ function DetailsBasket({ manageBasket }) {
   }
 
   function handleClickCommande() {
-    console.log(history);
     history.push("/commande");
   }
 
@@ -53,7 +52,7 @@ function DetailsBasket({ manageBasket }) {
                   <td>
                     {manageBasket && (
                       <span
-                        style={{ cursor: "pointer", color: "green" }}
+                        style={{ color: "green" }}
                         onClick={() => incrementItem(v._id)}
                       >
                         +
@@ -62,7 +61,7 @@ function DetailsBasket({ manageBasket }) {
                     {v.qte}
                     {manageBasket && (
                       <span
-                        style={{ cursor: "pointer", color: "red" }}
+                        style={{ color: "red" }}
                         onClick={() =>
                           v.qte > 1 ? decrementItem(v._id) : undefined
                         }
@@ -75,11 +74,8 @@ function DetailsBasket({ manageBasket }) {
                   {manageBasket && (
                     <td>
                       {" "}
-                      <span
-                        onClick={() => removeItem(v._id)}
-                        style={{ width: "100%", height: "100%" }}
-                      >
-                        <DeleteIcon style={{ cursor: "pointer" }} />
+                      <span onClick={() => removeItem(v._id)}>
+                        <DeleteIcon />
                       </span>
                     </td>
                   )}
@@ -114,11 +110,7 @@ function DetailsBasket({ manageBasket }) {
         </table>
       )}
       {basket.length === 0 && (
-        <div
-          className="alert alert-warning"
-          role="alert"
-          style={{ height: "10%" }}
-        >
+        <div className="alert alert-warning" role="alert">
           Your cart is empty- buy some items please !
         </div>
       )}

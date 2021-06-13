@@ -8,7 +8,6 @@ const Pagination = React.memo(function Pagination({
   if (numberOfPagination <= 1) {
     return null;
   }
-  console.log("from pagination");
 
   function handlePagination(e) {
     getPageNumber(e.target.value);

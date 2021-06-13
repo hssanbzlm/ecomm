@@ -5,7 +5,7 @@ function Carousel({ images }) {
   return (
     <div className="carousel-container">
       <div className="big-img">
-        <img width="100%" height="100%" src={images[active]} alt="item"></img>
+        <img src={images[active]} alt="item"></img>
       </div>
       <div className="group-img">
         {images.map((v, index) => (

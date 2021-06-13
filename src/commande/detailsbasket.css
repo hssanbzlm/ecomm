@@ -6,7 +6,11 @@
     justify-content: center;
     margin-top: 5px;
   }
+   
+  td span{
 
+    cursor: pointer;
+  }
 
   
   

@@ -10,7 +10,6 @@ const FilterItems = React.memo(function FilterItems({
   marques,
   handleMarquesFilter,
 }) {
-  console.log("from filter items");
   const [checked, setChecked] = useState(() => {
     const initChecks = {};
     for (const [key, value] of Object.entries(marques)) {
@@ -48,22 +47,9 @@ const FilterItems = React.memo(function FilterItems({
         marks={true}
       />
       <Typography id="range-slider">Marques</Typography>
-      <form
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          width: "70%",
-        }}
-      >
+      <form>
         {Object.keys(marques).map((marque, i) => (
-          <label
-            key={i}
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
+          <label key={i}>
             {" "}
             {`${marque} (${marques[marque]})`}
             <input

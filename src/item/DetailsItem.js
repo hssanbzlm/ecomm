@@ -1,6 +1,6 @@
 import axios from "axios";
-import React, { useEffect, useRef, useState } from "react";
-import { Redirect, useHistory, useLocation, useParams } from "react-router";
+import React, { useEffect, useState } from "react";
+import { useHistory, useParams } from "react-router";
 import Carousel from "./Carousel";
 import "./detailsitem.css";
 const baseUrl = "https://react-ecomm-back.herokuapp.com/item/";

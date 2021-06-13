@@ -5,7 +5,6 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { BasketContext } from "./Context";
 function Basket() {
   const [basket] = useContext(BasketContext);
-  console.log("from basket");
   return (
     <Link to={"/detailsbasket"}>
       <Badge badgeContent={basket.length} color="primary">

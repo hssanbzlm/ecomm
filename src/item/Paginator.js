@@ -10,7 +10,6 @@ const Paginator = React.memo(function Paginator({
   marquesFilter,
 }) {
   const [currentPage, setCurrentPage] = useState(1);
-  console.log("from paginator");
   const dataLength = data.filter(
     (v) =>
       v.price >= priceFilter[0] &&
@@ -44,17 +43,7 @@ const Paginator = React.memo(function Paginator({
           .map((v) => (
             <ItemCard item={v} key={v._id} />
           ))}
-        {dataLength == 0 && (
-          <h5
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            Try another filter
-          </h5>
-        )}
+        {dataLength == 0 && <h5>Try another filter</h5>}
       </div>
       <Pagination
         numberOfPagination={NumberOfPagination}

@@ -1,17 +1,9 @@
-import React, {
-  lazy,
-  memo,
-  useCallback,
-  useContext,
-  useMemo,
-  useState,
-} from "react";
+import React, { lazy, useContext, useState } from "react";
 import { BasketContext } from "../commande/Context";
 import { useHistory, useLocation } from "react-router-dom";
 import "./itemcard.css";
 const ModalComponent = lazy(() => import("../common/ModalComponent"));
 function ItemCard({ item }) {
-  console.log("item card");
   const [basket, setBasket] = useContext(BasketContext);
   const [showModal, setShowModal] = useState(false);
   const location = useLocation();
@@ -38,7 +30,6 @@ function ItemCard({ item }) {
   }
   function rediredtToDetailsItem(e) {
     e.stopPropagation();
-    console.log(location.pathname);
     history.push(`${location.pathname}/${item._id}`);
   }
 

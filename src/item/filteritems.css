@@ -14,3 +14,16 @@
     font-style: italic;
 }
 
+.filter-container form{
+   display: flex;
+   flex-direction: column;
+   width: 70%;
+} 
+
+.filter-container form label {
+
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
