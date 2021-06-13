@@ -43,7 +43,7 @@ const Paginator = React.memo(function Paginator({
           .map((v) => (
             <ItemCard item={v} key={v._id} />
           ))}
-        {dataLength == 0 && <h5>Try another filter</h5>}
+        {dataLength === 0 && <h5>Try another filter</h5>}
       </div>
       <Pagination
         numberOfPagination={NumberOfPagination}

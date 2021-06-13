@@ -7,7 +7,7 @@ function ModalComponent({ children }) {
     const modalRoot = document.getElementById("modal");
     modalRoot.appendChild(div);
     return () => modalRoot.removeChild(div);
-  }, []);
+  });
 
   return createPortal(<div>{children}</div>, div);
 }

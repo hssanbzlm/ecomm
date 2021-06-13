@@ -22,7 +22,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "dev": "parcel index.html --open",
+    "dev": "parcel public/index.html --open",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "serve": "http-server --proxy http://localhost:8080? prod",

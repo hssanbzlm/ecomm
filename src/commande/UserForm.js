@@ -30,11 +30,6 @@ function UserForm() {
     setErrors(validateForm(values));
   }, [values]);
 
-  useEffect(() => {
-    if (Object.keys(errors).length === 0 && submitted) {
-      console.log("SUCCESS");
-    }
-  }, [errors]);
   function toggleModal() {
     setShowModal(false);
     window.location.reload();

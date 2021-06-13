@@ -12,7 +12,7 @@ const FilterItems = React.memo(function FilterItems({
 }) {
   const [checked, setChecked] = useState(() => {
     const initChecks = {};
-    for (const [key, value] of Object.entries(marques)) {
+    for (const [key] of Object.entries(marques)) {
       initChecks[key] = true;
     }
     return initChecks;
