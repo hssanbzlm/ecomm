@@ -1,0 +1,17 @@
+node_modules/
+
+build/
+
+prod/
+
+.cache/
+
+dist/
+
+coverage/
+
+server-mock/
+
+.gitignore 
+
+README.md
