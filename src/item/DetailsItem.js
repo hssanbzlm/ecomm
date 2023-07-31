@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router";
 import Carousel from "./Carousel";
 import "./detailsitem.css";
-const baseUrl = "https://react-ecomm-back.herokuapp.com/item/";
+const baseUrl = "https://react-ecomm.onrender.com/item/";
 function DetailsItem() {
   const { itemId, item } = useParams();
   const [itemDetails, setItemsDetails] = useState();

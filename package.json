@@ -25,7 +25,7 @@
   },
   "scripts": {
     "dev": "parcel public/index.html --open",
-    "start": "node app.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "serve": "http-server --proxy http://localhost:8080? prod",
     "server": "json-server server/db.json",
